@@ -6,15 +6,15 @@ app = Flask(__name__, template_folder='app/templates')
 UPLOAD_FOLDER = 'data/adult'  
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/index')
+@app.route('/index.html')
 def predictautoencoder():
     return render_template('index.html')
 
-@app.route('/output')
+@app.route('/output.html')
 def about():
     return render_template('output.html')
 
-@app.route('/')
+@app.route('/input.html')
 def upload_file():
     return render_template('input.html')
 
@@ -28,6 +28,8 @@ def upload():
     if file:
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
         return redirect(url_for('about'))  # Redirect to 'about' function
+    
+
 
 if __name__ == '__main__':
     app.run(debug=True)
