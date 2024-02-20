@@ -11,24 +11,24 @@ from algorithms import (
 from datasets import get_dataset_params
 from utils.data import read_raw, write_anon, numberize_categories
 
-parser = argparse.ArgumentParser('K-Anonymize')
-parser.add_argument('--method', type=str, default='mondrian',
-                    help="K-Anonymity Method")
-parser.add_argument('--k', type=int, default=2,
-                    help="K-Anonymity or L-Diversity")
-parser.add_argument('--dataset', type=str, default='adult',
-                    help="Dataset to anonymize")
+# parser = argparse.ArgumentParser('K-Anonymize')
+# parser.add_argument('--method', type=str, default='mondrian',
+#                     help="K-Anonymity Method")
+# parser.add_argument('--k', type=int, default=2,
+#                     help="K-Anonymity or L-Diversity")
+# parser.add_argument('--dataset', type=str, default='adult',
+#                     help="Dataset to anonymize")
 
 class Anonymizer:
     def __init__(self, args):
-        self.method = args.method
+        self.method = args[0]
         assert self.method in ["mondrian", "topdown", "cluster", "mondrian_ldiv", "classic_mondrian", "datafly"]
-        self.k = args.k
-        self.data_name = args.dataset
-        self.csv_path = args.dataset+'.csv'
+        self.k = args[1]
+        self.data_name = args[2]
+        self.csv_path = args[2]+'.csv'
 
         # Data path
-        self.path = os.path.join('data', args.dataset)  # trailing /
+        self.path = os.path.join('data', args[2])  # trailing /
 
         # Dataset path
         self.data_path = os.path.join(self.path, self.csv_path)
@@ -41,7 +41,7 @@ class Anonymizer:
         # folder for all results
         res_folder = os.path.join(
             'results', 
-            args.dataset, 
+            args[2], 
             self.method)
 
         # path for anonymized datasets
@@ -139,11 +139,14 @@ class Anonymizer:
         return ncp_score, raw_cavg_score, anon_cavg_score, raw_dm_score, anon_dm_score
 
 
-def main(args):
+def main():
+    args = []
+    args.append(input("Input the method: "))
+    args.append(int(input("Input the k: ")))
+    args.append(input("Input the dataset: "))
     anonymizer = Anonymizer(args)
     anonymizer.anonymize()
     
 
 if __name__ == '__main__':
-    args = parser.parse_args()
-    main(args)
+    main()
