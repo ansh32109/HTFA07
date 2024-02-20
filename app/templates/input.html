@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="D:\HTFA07\app\static\styles.css">
         <title>DataVeil</title>
     </head>
-    <body>
+    <body1>
         <!-- HEADER -->
         <header class="l-header">
             <nav class="nav bd-grid">
@@ -27,7 +27,16 @@
                 </div>
             </nav>
         </header>
-
+        <section class="form-container">
+            <h2 style="text-align: center;">Upload CSV File</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="csvFile">Choose a CSV file:</label>
+                <input type="file" id="csvFile" name="file" accept=".csv" required>
+        
+                <button type="submit" style="color: black">Upload</button>
+            </form>
+        </section>
+        
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 
@@ -39,6 +48,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
         
         <!-- MAIN -->
-        <script src="assets/js/main.js"></script>
-    </body>
+        <script src="app/static/main.js"></script>
+    </body1>
 </html>
