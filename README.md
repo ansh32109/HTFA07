@@ -1,13 +1,8 @@
-# 1. Fork the Repository:
-  #### Go to the GitHub page https://github.com/HackToFuture/HTFXNN <br>
+# DataVeil - Enabling data analytics with a dash of privacy.
+# 
+  #### Go to the GitHub page https://github.com/HackToFuture/HTFA07 <br>
   #### Click on the "Fork" button in the upper-right corner of the page.
-  #### Assign the repository name as HTF *<Problem_Statement_Code><Team_Number>*.
-  ```
-Example :
-Repository Name : HTFC09
-Problem Statement code -> C
-Team Number -> 09
-```
+
   <img align="center" width = "500" src = "https://docs.github.com/assets/cb-40742/mw-1440/images/help/repository/fork-button.webp" alt="fork image"/>
 
 # 2.Clone the Forked Repository:
@@ -17,30 +12,37 @@ Team Number -> 09
   ```
   git clone <repository-url>
 ```
+# Abstract overview: 
+The goal of our project is to achieve an optimal level of data anonymity without compromising on the usefulness of the information that is contained within the data. In this direction, we have employed k-anonymity algorithm using the topdown implementation (works best for large datasets; scalable). To gauge the efficacy of the algorithm, we have conducted a comparative study on 3 ML models- Random Forest, Gradient Boost, Adeline; and training them on both the original raw dataset and each of the k-anonymized dataset. Further we have strived to calculate the globally optimal k value using the Bayesian optimization algorithm.
 
+A high level overview of our project can be viewed at Flowchart.drawio.pdf.
 
-# 3.Start working on your project
+# Getting started with the project
+Firstly, initialize a virtual environment in your local system, using the following command (after changing to the cloned repo directory): 
+```
+python3 -m venv .
+```
+In order to activate the virtual environment run the following command: 
+```
+source bin/activate
+```
+Following this, the dependencies can be installed by running the following command in the command line interface: 
+```
+pip install -r requirements.txt
+```
+Finally, the flask app can be launched by running the following command in the terminal: 
+```
+flask run
+```
 
-# 4.Commit Changes:
-  #### Use the git status command to see the changes you've made.<br>
-   ```
-    git status
- ```
-  
+# Future scope: 
+- Expand the offered anonymization algorithms to make it a more comprehensive open source tool
+- Research  for a better optimizer, a few we have in mind  as of now are Quantum enhanced Genetic Algorithm models or Particle Swarm optimisation algorithms.
+- Conduct an extensive research on the effect of different degree of anonymizations on the accuracy of different training models
 
-  #### Use the git add command to stage the changes you want to commit.<br>
-  ```
-    git add .
- ```
-      
-  #### Use the git commit command to commit your changes with a descriptive message.<br>
-   ```
-    git commit -m "Your descriptive commit message"
- ```
-  
-
-# 5.Push Changes:
-  #### Push your changes to your forked repository on GitHub using the git push command.<br>
-  ```
-    git push origin
- ```
+# References: 
+https://ieeexplore.ieee.org/document/9343198
+https://onlinelibrary.wiley.com/doi/10.1002/spe.2812
+https://arxiv.org/abs/2305.07415
+https://pubmed.ncbi.nlm.nih.gov/36215114/
+https://epic.org/wp-content/uploads/privacy/reidentification/Sweeney_Article.pdf
