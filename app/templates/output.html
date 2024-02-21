@@ -327,24 +327,6 @@ button:hover {
   row-gap: 1.5rem;
 }
 
-.home__data {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: data;
-  text-align: center;
-  padding-top: 3.5rem;
-}
-
-.home__title {
-  font-size: var(--biggest-font-size);
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
-.home__description {
-  font-size: var(--normal-font-size);
-  padding: 0 1rem;
-}
 
 .home__img {
   -ms-grid-row: 2;
@@ -589,7 +571,91 @@ button:hover {
   }
 }
 
-        </style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .l-main {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .l-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.l-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.card {
+  width: calc(20% - 20px); /* Adjust the width of each card */
+  background-color: lightgray;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-heading {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.card li:last-child {
+  margin-bottom: 0;
+}
+
+
+  </style>
+
     </head>
     <body>
         <!-- HEADER -->
@@ -602,20 +668,117 @@ button:hover {
                         <li class="nav__item"><a href="index.html" class="nav__link" style="color: white;">Home</a></li>
                     </ul> -->
                 </div>
-                
-
                 <div class="nav__actions">
                     <div class="nav__toggle" id="nav-toggle">
                         <img src="assets/icons/bx-chevron-down.svg" alt="">
                     </div>
-                    <a href="input.html" class="nav__btn" style="color: black;">Try It</a>
+                    <a href="index.html" class="nav__btn" style="color: black;">Home</a>
                 </div>
             </nav>
         </header>
 
         <!-- HOME -->
         <main class="l-main bd-grid">
+            <section class="card">
+              <h2 class="card-heading">Iteration 1<br> k=1102</h2>
+              <div class="card-content">
+                <ul>
+                  <li>DM: Before: 909746244 | After: 277383660</li>
+                  <li>NCP: 0.93</li>
+                  <li>CAVG: 3.421</li>
+                </ul>
+              </div>
+            </section>
             
+            <section class="card">
+              <h2 class="card-heading">Iteration 2<br> k=567</h2>
+              <div class="card-content">
+                <ul>
+                  <li>DM: Before: 909746244 | After: 97596450</li>
+                  <li>NCP: 0.861</li>
+                  <li>CAVG: 2.313</li>
+                </ul>
+              </div>
+            </section>
+            
+            <section class="card">
+              <h2 class="card-heading">Iteration 3<br> k=1587</h2>
+              <div class="card-content">
+                <ul>
+                  <li>DM: Before: 909746244 | After: 625546694</li>
+                  <li>NCP: 0.980</li>
+                  <li>CAVG: 6.335</li>
+                </ul>
+              </div>
+            </section>
+          
+            <section class="card">
+              <h2 class="card-heading">Iteration 4<br> k=1842</h2>
+              <div class="card-content">
+                <ul>
+                  <li>DM: Before: 909746244 | After: 453267122</li>
+                  <li>NCP: 0.964</li>
+                  <li>CAVG: 4.094</li>
+                </ul>
+              </div>
+            </section>
+          
+            <section class="card">
+              <h2 class="card-heading">Iteration 5<br> k=301</h2>
+              <div class="card-content">
+                <ul>
+                  <li>DM: Before: 909746244 | After: 66571806</li>
+                  <li>NCP: 0.757</li>
+                  <li>CAVG: 1.82</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="card">
+              <h2 class="card-heading">Iteration 1</h2>
+              <div class="card-content">
+                <ul>
+                  <li>Accuracy: 0.8097</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="card">
+              <h2 class="card-heading">Iteration 2</h2>
+              <div class="card-content">
+                <ul>
+                  <li>Accuracy: 0.7527</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="card">
+              <h2 class="card-heading">Iteration 3</h2>
+              <div class="card-content">
+                <ul>
+                  <li>Accuracy: 0.746</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="card">
+              <h2 class="card-heading">Iteration 4</h2>
+              <div class="card-content">
+                <ul>
+                  <li>Accuracy: 0.705</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="card">
+              <h2 class="card-heading">Iteration 5</h2>
+              <div class="card-content">
+                <ul>
+                  <li>Accuracy: 0.7635</li>
+                </ul>
+              </div>
+            </section>
+          <!-- </section> -->
         </main>
 
         <!-- GSAP -->
