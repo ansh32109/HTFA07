@@ -41,8 +41,8 @@ flask run
 - Conduct an extensive research on the effect of different degree of anonymizations on the accuracy of different training models
 
 # References: 
-https://ieeexplore.ieee.org/document/9343198
-https://onlinelibrary.wiley.com/doi/10.1002/spe.2812
-https://arxiv.org/abs/2305.07415
-https://pubmed.ncbi.nlm.nih.gov/36215114/
-https://epic.org/wp-content/uploads/privacy/reidentification/Sweeney_Article.pdf
+https://ieeexplore.ieee.org/document/9343198 <br>
+https://onlinelibrary.wiley.com/doi/10.1002/spe.2812 <br>
+https://arxiv.org/abs/2305.07415 <br>
+https://pubmed.ncbi.nlm.nih.gov/36215114/ <br>
+https://epic.org/wp-content/uploads/privacy/reidentification/Sweeney_Article.pdf <br>
