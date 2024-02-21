@@ -1,18 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
-get_ipython().system('pip install BayesianOptimization')
-
-
-# In[50]:
-
-
-from bayes_opt import BayesianOptimization
 from utils.types import AnonMethod
 import os
+import sys
 import argparse
 import numpy as np
 import pandas as pd
@@ -273,21 +261,11 @@ class StandardModel:
         abc_fp, abc_tp, abc_threshold = roc_curve(y_test, ypredabc)
         print("Threshold:", abc_threshold)
 
-
-# In[85]:
-
-
 class AnonStandardModel:
     def __init__(self,args):
         self.kfile = str(args)+'.csv'
         self.csv_file="adult_anonymized_"+self.kfile
-#         # Data path
-#         self.path = os.path.join('', args)  # trailing /
 
-#         # Dataset path
-#         self.data_path = os.path.join(self.path, self.csv_path)
-
-        
         
     def anonstandardmodel(self):
         csv_data=os.path.join("./results/adult/topdown",self.csv_file)
@@ -360,17 +338,13 @@ class AnonStandardModel:
         abc_fp, abc_tp, abc_threshold = roc_curve(y_test, ypredabc)
         print("Threshold:", abc_threshold)
 
-
-# In[88]:
-
-
 klist=[]
 
 def main():
     for i in range (5):
         k = int(random.uniform(10, 2500))
         klist.append(k)
-        args=["topdown",k,"adult"]
+        args=["topdown",k, "adult"]
         
         anonymizer = Anonymizer(args)
         anonymizer.anonymize()
@@ -382,32 +356,25 @@ def main():
         anonstandardmodel=AnonStandardModel(klist[i])
         anonstandardmodel.anonstandardmodel()
     
-if __name__ == '__main__':
-    main() 
+if __name__ == "__main__":
+    main()
 
 
-# In[76]:
+# args=str(1000)
+
+# k_file = args+'.csv'
+# csv_file="adult_anonymized_"+k_file
+
+# print(csv_file)
+
+# # Bounded region of parameter space
+# pbounds = {'x': (10, 3000)}
 
 
-args=str(1000)
-
-k_file = args+'.csv'
-csv_file="adult_anonymized_"+k_file
-
-print(csv_file)
-
-
-# In[ ]:
-
-
-# Bounded region of parameter space
-pbounds = {'x': (10, 3000)}
-
-
-optimizer = BayesianOptimization(
-    f=anonymize,
-    pbounds=pbounds,
-    verbose=2, # verbose = 1 prints only when a maximum is observed, verbose = 0 is silent
-    random_state=1,
-)
+# optimizer = BayesianOptimization(
+#     f=anonymize,
+#     pbounds=pbounds,
+#     verbose=2, # verbose = 1 prints only when a maximum is observed, verbose = 0 is silent
+#     random_state=1,
+# )
 
